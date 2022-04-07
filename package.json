@@ -1,10 +1,13 @@
 {
-  "name": "monaco-language-turtle",
+  "name": "@datavillage-me/monaco-language-turtle",
   "version": "0.0.1",
   "description": "Turtle support for Monaco Editor",
   "author": {
     "name": "Philippe Duchesne",
     "email": "pduchesne@gmail.com"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "build": "yarn clean && yarn build-tsc && yarn build-rollup",
@@ -12,7 +15,8 @@
     "build-rollup": "rollup -c",
     "test": "jest --verbose --passWithNoTests",
     "clean": "rm -rf dist/ tsconfig.tsbuildinfo",
-    "antlr4ts": "antlr4ts ./turtle.g4 -o ./src/turtle/ANTLR"
+    "antlr4ts": "antlr4ts ./turtle.g4 -o ./src/turtle/ANTLR",
+    "build-publish": "yarn build && yarn publish"
   },
   "main": "dist/index.js",
   "module": "dist/index.mjs",
